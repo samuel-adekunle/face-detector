@@ -1,0 +1,51 @@
+html, body, main {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: url("bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.mask {
+  content: "";
+  width: 720px;
+  height: 724px;
+}
+
+#webcam-container {
+  position: relative;
+}
+
+#webcam-container>canvas {
+  z-index: -1;
+}
+
+#with-mask {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+#without-mask {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
