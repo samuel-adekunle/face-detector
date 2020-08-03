@@ -22,8 +22,6 @@ html, body, main {
 
 .mask {
   content: "";
-  width: 720px;
-  height: 724px;
   display: flex;
   align-items: center;
   justify-content: center;

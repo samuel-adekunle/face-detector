@@ -10,7 +10,9 @@ async function init() {
   model = await tmImage.load(modelURL, metadataURL);
 
   const flip = true;
-  webcam = new tmImage.Webcam(720, 724, flip); // width, height, flip
+  const width = Math.min(window.innerWidth, 720)
+
+  webcam = new tmImage.Webcam(width, width, flip); // width, height, flip
   await webcam.setup();
   await webcam.play();
   window.requestAnimationFrame(loop);
@@ -19,6 +21,11 @@ async function init() {
   document.getElementById("submit-btn").classList = "hidden";
   withOver = document.getElementById("with-mask");
   withoutOver = document.getElementById("without-mask");
+
+  withOver.style.width = `${width}px`;
+  withOver.style.height = `${width}px`;
+  withoutOver.style.width = `${width}px`;
+  withoutOver.style.height = `${width}px`;
 }
 
 async function loop() {
