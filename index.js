@@ -1,4 +1,4 @@
-let model, webcam, withOver, withoutOver;
+let model, webcam, withOver, withoutOver, label;
 const maskOn = "mask overlay";
 const maskOff = "mask overlay hidden";
 const URL = "https://teachablemachine.withgoogle.com/models/N-OAGZBZa/";
@@ -21,11 +21,13 @@ async function init() {
   document.getElementById("submit-btn").classList = "hidden";
   withOver = document.getElementById("with-mask");
   withoutOver = document.getElementById("without-mask");
+  label = document.getElementById("label-container")
 
   withOver.style.width = `${width}px`;
   withOver.style.height = `${width}px`;
   withoutOver.style.width = `${width}px`;
   withoutOver.style.height = `${width}px`;
+  label.style.width = `${width}px`;
 }
 
 async function loop() {
@@ -49,5 +51,6 @@ function toggleOverlay(withMask) {
 async function predict() {
   const prediction = await model.predict(webcam.canvas);
   const withMask = prediction[0].probability
+  label.innerHTML = `${(withMask * 100).toFixed(2)}%`
   toggleOverlay(withMask)
 }
