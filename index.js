@@ -35,7 +35,7 @@ async function loop() {
 }
 
 function toggleOverlay(withMask) {
-  const tol = 0.95
+  const tol = 0.85
   if (withMask > tol) {
     withOver.className = maskOn
     withoutOver.className = maskOff
