@@ -52,6 +52,19 @@ html, body, main {
   position: relative;
 }
 
+#link {
+  position: absolute;
+  font-size: 18px;
+  bottom: 5%;
+  color: white;
+}
+
+#link a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 #label-container {
   font-size: 2em;
 }
